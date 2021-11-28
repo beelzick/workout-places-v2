@@ -1,0 +1,8 @@
+.container {
+  width: 50%;
+  height: 100%;
+}
+
+.right {
+  position: relative;
+}

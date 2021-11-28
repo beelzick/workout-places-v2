@@ -1,0 +1,41 @@
+.container {
+  background-color: #000;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-size: 140px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.container .h1 span {
+  color: #DA2C38;
+}
+
+.container .h2 {
+  margin-top: 30px;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 200;
+}
