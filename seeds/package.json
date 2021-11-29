@@ -1,0 +1,9 @@
+{
+    "type": "module",
+    "devDependencies": {
+        "dotenv": "^10.0.0"
+    },
+    "scripts": {
+        "start": "node --experimental-json-modules index.js"
+    }
+}

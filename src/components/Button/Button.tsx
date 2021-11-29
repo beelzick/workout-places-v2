@@ -18,7 +18,6 @@ const Button = ({ children, variant, color, emotion }: Props) => {
             className={styles.button}
             css={css`
                 color: ${btnColor};
-                ${emotion};
                 ${variant === 'contained' && (
                     `
                     background-color: ${btnColor};
@@ -31,6 +30,7 @@ const Button = ({ children, variant, color, emotion }: Props) => {
                     border: 2px solid ${btnColor};
                     `
                 )}
+                ${emotion};
             `}
         >
             {children}

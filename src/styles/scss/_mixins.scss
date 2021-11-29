@@ -1,0 +1,16 @@
+@mixin flexCenter() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+@mixin flexAlignCenter() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin wh100() {
+    height: 100%;
+    width: 100%;
+}

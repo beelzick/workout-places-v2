@@ -1,0 +1,12 @@
+@import '../../../styles/scss/_vars.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width: $md) {
+    .container {
+        flex-direction: row;
+    }
+}

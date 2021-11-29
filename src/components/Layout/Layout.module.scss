@@ -1,0 +1,9 @@
+.container {
+    min-height: 100vh;
+}
+
+.main {
+    min-height: calc(100vh - 54px);
+    padding: 30px;
+    box-sizing: border-box;
+}

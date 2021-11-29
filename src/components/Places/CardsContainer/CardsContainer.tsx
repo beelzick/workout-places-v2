@@ -1,11 +1,11 @@
-import styles from './HomeContainer.module.css'
 import { ReactNode } from 'react'
+import styles from './CardsContainer.module.css'
 
-interface Children {
+interface Props {
     children: ReactNode
 }
 
-const HomeContainer = ({ children }: Children) => {
+const CardsContainer = ({ children }: Props) => {
     return (
         <div className={styles.container}>
             {children}
@@ -13,4 +13,4 @@ const HomeContainer = ({ children }: Children) => {
     )
 }
 
-export default HomeContainer
+export default CardsContainer

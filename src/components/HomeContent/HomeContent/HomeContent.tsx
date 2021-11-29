@@ -1,13 +1,13 @@
-import HomeContainer from '../HomeContainer/HomeContainer'
 import SectionLeft from './SectionLeft/SectionLeft'
 import SectionRight from './SectionRight/SectionRight'
+import styles from './HomeContent.module.css'
 
 const HomeContent = () => {
     return (
-        <HomeContainer>
+        <div className={styles.container}>
             <SectionLeft />
             <SectionRight />
-        </HomeContainer>
+        </div >
     )
 }
 

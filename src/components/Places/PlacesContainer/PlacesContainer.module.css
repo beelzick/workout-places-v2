@@ -1,0 +1,24 @@
+.pageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    width: 70%;
+  }
+}

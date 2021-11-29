@@ -1,0 +1,9 @@
+@import '../../../styles/scss/_mixins.scss';
+
+.container {
+    @include flexAlignCenter();
+}
+
+.buttons {
+    margin-left: 50px;
+}
