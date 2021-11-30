@@ -6,9 +6,10 @@ interface Props {
     name: string
     description: string
     location: string
+    _id: string
 }
 
-const PlaceCard = ({ name, description, location }: Props) => {
+const PlaceCard = ({ name, description, location, _id }: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.imgContainer}>
@@ -25,7 +26,12 @@ const PlaceCard = ({ name, description, location }: Props) => {
                 </p>
                 <small>{location}</small>
                 <div />
-                <Button variant='contained' color='primary' emotion='margin-top: 30px;'>
+                <Button
+                    variant='contained'
+                    color='primary'
+                    href={`/places/${_id}`}
+                    emotion='margin-top: 30px;'
+                >
                     view place
                 </Button>
             </div>
