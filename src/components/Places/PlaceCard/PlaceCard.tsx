@@ -24,13 +24,13 @@ const PlaceCard = ({ name, description, location, _id }: Props) => {
                 <p>
                     {description.length > 250 ? `${description.slice(0, 250)}...` : description}
                 </p>
-                <small>{location}</small>
                 <div />
+                <small>{location}</small>
                 <Button
                     variant='contained'
                     color='primary'
                     href={`/places/${_id}`}
-                    emotion='margin-top: 30px;'
+                    emotion='margin-top: 40px;'
                 >
                     view place
                 </Button>

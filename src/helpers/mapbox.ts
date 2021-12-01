@@ -1,16 +1,8 @@
 import mapboxgl from 'mapbox-gl';
-import { Dispatch, SetStateAction } from 'react';
 import axios from 'axios'
 
-type SetState = Dispatch<SetStateAction<number>>
-
-type RenderMap = (map: any, setLng: SetState, setLat: SetState, setZoom: SetState) => void
-const renderMap: RenderMap = async (map, setLng, setLat, setZoom) => {
-    map.current.on('move', () => {
-        setLng(map.current.getCenter().lng.toFixed(4))
-        setLat(map.current.getCenter().lat.toFixed(4))
-        setZoom(map.current.getZoom().toFixed(2))
-    });
+type RenderMap = (map: { current: any }) => void
+const renderMap: RenderMap = async (map) => {
     map.current.on('load', async () => {
         const { data } = await axios.get('/api/places')
         map.current.addSource('places', {
@@ -19,8 +11,8 @@ const renderMap: RenderMap = async (map, setLng, setLat, setZoom) => {
                 features: data.places
             },
             cluster: true,
-            clusterMaxZoom: 14, // Max zoom to cluster points on
-            clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+            clusterMaxZoom: 14,
+            clusterRadius: 50
         });
         map.current.addLayer({
             id: 'clusters',
@@ -28,11 +20,6 @@ const renderMap: RenderMap = async (map, setLng, setLat, setZoom) => {
             source: 'places',
             filter: ['has', 'point_count'],
             paint: {
-                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-                // with three steps to implement three types of circles:
-                //   * Blue, 20px circles when point count is less than 100
-                //   * Yellow, 30px circles when point count is between 100 and 750
-                //   * Pink, 40px circles when point count is greater than or equal to 750
                 'circle-color': [
                     'step',
                     ['get', 'point_count'],
@@ -53,6 +40,7 @@ const renderMap: RenderMap = async (map, setLng, setLat, setZoom) => {
                 ]
             }
         });
+
         map.current.addLayer({
             id: 'cluster-count',
             type: 'symbol',
@@ -79,7 +67,7 @@ const renderMap: RenderMap = async (map, setLng, setLat, setZoom) => {
                 'circle-stroke-color': '#fff'
             }
         });
-        // inspect a cluster on click
+
         map.current.on('click', 'clusters', (e: any) => {
             const features = map.current.queryRenderedFeatures(e.point, {
                 layers: ['clusters']
@@ -103,9 +91,6 @@ const renderMap: RenderMap = async (map, setLng, setLat, setZoom) => {
             const tsunami =
                 e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
 
-            // Ensure that if the map is zoomed out such that
-            // multiple copies of the feature are visible, the
-            // popup appears over the copy being pointed to.
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }

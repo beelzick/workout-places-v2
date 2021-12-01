@@ -1,0 +1,48 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  position: relative;
+}
+
+.container .content div {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 8px 16px;
+  line-height: 1.5;
+}
+
+.container .content div h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.container .content div p {
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  padding: 8px 0;
+}
+
+.container .content div strong {
+  font-weight: 600;
+}
+
+.container .content div span {
+  color: #6c757d;
+}
+
+.container .content .buttons {
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .content div:last-child {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #6c757d;
+}

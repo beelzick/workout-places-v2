@@ -1,0 +1,39 @@
+@import '../../../../styles/scss/_vars.scss';
+@import '../../../../styles/scss/_mixins.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    position: relative;
+    .content {
+        div {
+            border-top: 1px solid $border-color;
+            padding: 8px 16px;
+            line-height: 1.5;
+            h1 {
+                font-size: 24px;
+                font-weight: 500;
+            }
+            p {
+                @include p();
+                padding: 8px 0;
+            }
+            strong {
+                font-weight: 600;
+            }
+            span {
+                color: $muted;
+            }
+        }
+        .buttons {
+            padding: 16px;
+            display: flex;
+        }
+        div:last-child {
+            background-color: rgba(0,0,0,.03);
+            color: $muted;
+        }
+    }
+}
+

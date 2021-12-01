@@ -1,12 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import clientPromise from '../../lib/mongodb'
 import { ObjectId } from 'mongodb'
+import ShowPage from '../../src/components/Places/ShowPage/ShowPage'
 
-const Place = () => {
+const Place = ({ place }: { place: Place }) => {
     return (
-        <div>
-
-        </div>
+        <ShowPage place={place} />
     )
 }
 
@@ -21,6 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
             params: { placeId: place._id }
         }
     })
+
     return {
         paths,
         fallback: false
@@ -33,8 +33,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const placeId = context!.params!.placeId as string
     const placeData = await client.db('workout-places').collection('places').findOne({ _id: new ObjectId(placeId) })
     const place = JSON.parse(JSON.stringify(placeData))
-    console.log(place)
+
     return {
-        props: {}
+        props: {
+            place
+        }
     }
 }

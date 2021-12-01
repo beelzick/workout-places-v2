@@ -14,3 +14,8 @@
     height: 100%;
     width: 100%;
 }
+
+@mixin p() {
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+}

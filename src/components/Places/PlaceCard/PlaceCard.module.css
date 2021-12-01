@@ -10,7 +10,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 30px;
-  border: 1px solid #DA2C38;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .detailsContainer {
@@ -35,8 +35,8 @@
 }
 
 .detailsContainer p {
-  line-height: 1.5;
   letter-spacing: 0.01em;
+  line-height: 1.5;
 }
 
 .detailsContainer small {
