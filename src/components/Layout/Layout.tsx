@@ -14,7 +14,7 @@ const Layout = ({ children }: Props) => {
             <NavbarContainer>
                 <NavbarContent
                     left={<NavbarLeft />}
-                    right={<NavbarRight />}
+                    right={<NavbarRight color='primary' variant='contained' />}
                 />
             </NavbarContainer>
             <main className={styles.main}>

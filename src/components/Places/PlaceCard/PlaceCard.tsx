@@ -31,6 +31,7 @@ const PlaceCard = ({ name, description, location, _id }: Props) => {
                     color='primary'
                     href={`/places/${_id}`}
                     emotion='margin-top: 40px;'
+                    nextLink
                 >
                     view place
                 </Button>

@@ -56,6 +56,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const client = await clientPromise
     const data = await client.db('workout-places').collection('places').find({}).limit(15).toArray()
     const results = JSON.parse(JSON.stringify(data))
+    
 
     return {
         props: {

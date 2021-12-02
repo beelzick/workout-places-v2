@@ -1,17 +1,9 @@
-import styles from './NavbarRight.module.css'
-import Button from '../../Button/Button'
+import Button from '../Button/Button'
 import { useUser } from '@auth0/nextjs-auth0'
 
-
-interface Props {
-    color: 'primary' | 'white'
-    variant: 'outlined' | 'contained'
-}
-
-const NavbarRight = ({ color, variant }: Props) => {
+const NavRight = () => {
     const { user, error, isLoading } = useUser();
-
-    const handleSingInClick = () => {
+    const handleSignInClick = () => {
         window.location.assign('/api/auth/login')
     }
     const handleSignOutClick = () => {
@@ -21,26 +13,27 @@ const NavbarRight = ({ color, variant }: Props) => {
     if (isLoading) return null
 
     return (
-        <div className={styles.container}>
+        <div>
             {user ? (
                 <Button
-                    variant={variant}
-                    color={color}
+                    variant='outlined'
+                    color='white'
                     onClick={handleSignOutClick}
                 >
                     sign out
                 </Button>
             ) : (
                 <Button
-                    variant={variant}
-                    color={color}
-                    onClick={handleSingInClick}
+                    variant='outlined'
+                    color='white'
+                    onClick={handleSignInClick}
                 >
                     sign in
                 </Button>
             )}
+
         </div>
     )
 }
 
-export default NavbarRight
+export default NavRight
