@@ -9,7 +9,7 @@ const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 const getRndInteger = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min)
 const randArrEl = array => array[Math.floor(Math.random() * array.length)]
 
-const generatePrice = () => {
+const generateEntry = () => {
     if (Math.random() > 0.5) {
         return Math.floor(Math.random() * 8) + 4
     } else {
@@ -36,12 +36,15 @@ const generateData = () => {
             name: `${randArrEl(descriptors)} ${randArrEl(places)}`,
             location: `${location.city}, ${location.admin_name}`,
             description: lorem.slice(0, Math.floor(Math.random() * lorem.length)),
-            entry: generatePrice(),
+            entry: generateEntry(),
             addDate: generateDate(),
             geometry: {
                 type: 'Point',
                 coordinates: [parseFloat(location.lng), parseFloat(location.lat)]
-            }
+            },
+            author: '102014881727208423653',
+            imageUrl: 'https://res.cloudinary.com/dfvpybkta/image/upload/c_scale,h_1391,q_85/v1634593106/WorkoutPlaces/gym-7.jpg',
+            reviews: [],
         })
     }
     return placesArray

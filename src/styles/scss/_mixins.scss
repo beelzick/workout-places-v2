@@ -1,8 +1,15 @@
+@import './_vars.scss';
+
 @mixin flexCenter() {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+}
+
+@mixin flexJustifyCenter() {
+    display: flex;
+    justify-content: center;
 }
 
 @mixin flexAlignCenter() {
@@ -18,4 +25,25 @@
 @mixin p() {
     letter-spacing: 0.01em;
     line-height: 1.5;
+}
+
+@mixin input() {
+    appearance: none;
+    width: 100%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    outline: none;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    transition: .2s;
+    font-size: 1rem;
+    &:focus {
+        border: 1px solid $primary;
+        box-shadow: 0px 0px 0px 3px rgba(218, 44, 56, 0.65);
+    }
+}
+
+@mixin h1() {
+    font-size: 2.5rem;
 }

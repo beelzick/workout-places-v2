@@ -1,0 +1,6 @@
+@import '../../styles/scss/_mixins.scss';
+
+.input {
+    @include input();
+    margin-top: 10px;
+}

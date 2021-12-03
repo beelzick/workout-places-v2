@@ -6,7 +6,7 @@ const NavbarLeft = () => {
         <div className={styles.container}>
             <Logo />
             <div className={styles.buttons}>
-                <Button color='primary' variant='contained'>
+                <Button color='primary' variant='contained' nextLink href='/places/new'>
                     Add Place
                 </Button>
             </div>

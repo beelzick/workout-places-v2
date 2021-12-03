@@ -1,0 +1,8 @@
+@import '../../../styles/scss/_mixins.scss';
+
+.textArea {
+    resize: none;
+    margin-top: 10px;
+    overflow: auto;
+    @include input();
+}

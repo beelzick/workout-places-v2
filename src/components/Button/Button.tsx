@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { EventHandler, MouseEventHandler, ReactNode } from 'react'
 import { css } from '@emotion/react'
-import { returnColor } from '../../helpers/ButtonHelpers'
+import { returnColor } from '../../helpers/buttonHelpers'
 import Link from 'next/link'
 
 interface Props {
@@ -12,9 +12,10 @@ interface Props {
     href?: string
     nextLink?: boolean
     onClick?: MouseEventHandler<HTMLButtonElement>
+    type?: 'button' | 'reset' | 'submit'
 }
 
-const Button = ({ children, variant, color, emotion, href, nextLink, onClick }: Props) => {
+const Button = ({ children, variant, color, emotion, href, nextLink, onClick, type }: Props) => {
     const btnColor = returnColor(color)
     const styles = css`
     padding: 6px 16px;
@@ -57,7 +58,7 @@ const Button = ({ children, variant, color, emotion, href, nextLink, onClick }: 
         )
     } else {
         return (
-            <button onClick={onClick} css={styles}>
+            <button onClick={onClick} css={styles} type={type}>
                 {children}
             </button>
         )

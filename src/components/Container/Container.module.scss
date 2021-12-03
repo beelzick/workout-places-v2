@@ -1,0 +1,22 @@
+@import '../../styles/scss/_vars.scss';
+
+@media(min-width: $sm) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media(min-width: $md) {
+    .container {
+        max-width: 800px;
+    }
+}
+@media(min-width: $lg) {
+    .container {
+        max-width: 1100px;
+    }
+}   
+@media(min-width: $xl) {
+    .container {
+        max-width: 1260px;
+    }
+}   

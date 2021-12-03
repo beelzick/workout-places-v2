@@ -11,6 +11,9 @@ interface Place {
         coordinates: [number, number]
     }
     _id: string
+    reviews: []
+    author: string
+    imgUrl: string
 }
 
 interface Places {

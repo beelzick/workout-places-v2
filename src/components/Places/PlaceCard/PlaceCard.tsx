@@ -7,14 +7,15 @@ interface Props {
     description: string
     location: string
     _id: string
+    imgUrl: string
 }
 
-const PlaceCard = ({ name, description, location, _id }: Props) => {
+const PlaceCard = ({ name, description, location, _id, imgUrl }: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.imgContainer}>
                 <Image
-                    src='https://res.cloudinary.com/dfvpybkta/image/upload/v1634593106/WorkoutPlaces/gym-7.jpg'
+                    src={imgUrl}
                     layout='fill'
                     objectFit='cover'
                 />

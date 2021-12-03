@@ -9,7 +9,7 @@ const PlaceShowCard = ({ place }: { place: Place }) => {
     return (
         <div className={styles.container}>
             <Image
-                src='https://res.cloudinary.com/dfvpybkta/image/upload/v1638056336/workout-places-new/sec-right_a5uahx.jpg'
+                src={place.imgUrl}
                 objectFit='cover'
                 height={500}
                 width={728}

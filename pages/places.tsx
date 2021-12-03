@@ -35,13 +35,14 @@ const Places = ({ results }: Props) => {
                     style={{ overflow: 'hidden' }}
                     hasMore={hasMore}
                 >
-                    {places.map(({ name, description, location, _id }) => (
+                    {places.map(({ name, description, location, _id, imgUrl }) => (
                         <PlaceCard
                             key={_id}
                             name={name}
                             description={description}
                             location={location}
                             _id={_id}
+                            imgUrl={imgUrl}
                         />
                     ))}
                 </InfiniteScroll>
@@ -56,7 +57,6 @@ export const getStaticProps: GetStaticProps = async () => {
     const client = await clientPromise
     const data = await client.db('workout-places').collection('places').find({}).limit(15).toArray()
     const results = JSON.parse(JSON.stringify(data))
-    
 
     return {
         props: {

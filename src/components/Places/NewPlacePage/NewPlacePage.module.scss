@@ -1,0 +1,15 @@
+@import '../../../styles/scss/_mixins.scss';
+
+.container {
+    @include flexJustifyCenter();
+    .content {
+        width: 50%;
+        h1 {
+            @include h1();
+            width: 100%;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    }
+
+}

@@ -1,0 +1,25 @@
+.textArea {
+  resize: none;
+  margin-top: 10px;
+  overflow: auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  padding: 8px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  outline: none;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition: .2s;
+  transition: .2s;
+  font-size: 1rem;
+}
+
+.textArea:focus {
+  border: 1px solid #DA2C38;
+  -webkit-box-shadow: 0px 0px 0px 3px rgba(218, 44, 56, 0.65);
+          box-shadow: 0px 0px 0px 3px rgba(218, 44, 56, 0.65);
+}
