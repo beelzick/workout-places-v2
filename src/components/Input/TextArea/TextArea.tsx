@@ -12,14 +12,23 @@ interface Props {
     emotion?: string
     labelText: string
     register: UseFormRegister<InputProps>
+    defaultValue?: string
 }
 
-const TextArea = ({ name, emotion, labelText, register }: Props) => {
+const TextArea = ({ name, emotion, labelText, register, defaultValue }: Props) => {
     const containerStyles = css`${emotion}`
     return (
         <div css={containerStyles}>
-            <label htmlFor={name}>{labelText}</label>
-            <textarea rows={5} id={name} {...register(name)} className={styles.textArea} />
+            <label htmlFor={name}>
+                {labelText}
+            </label>
+            <textarea
+                rows={5}
+                id={name}
+                {...register(name)}
+                className={styles.textArea}
+                defaultValue={defaultValue}
+            />
         </div>
     )
 }

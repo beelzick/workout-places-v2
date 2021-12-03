@@ -3,9 +3,18 @@ import Image from 'next/image'
 import Button from '../../../Button/Button'
 import { MdOutlineDelete } from 'react-icons/md'
 import moment from 'moment'
+import { CurrentPlaceContext } from '../../../../../pages/_app'
+import { useContext } from 'react'
+import { DeleteDialogVisibleContext } from '../ShowPage'
 
 const PlaceShowCard = ({ place }: { place: Place }) => {
+    const { setDeleteDialogVisible } = useContext(DeleteDialogVisibleContext)
     const momentDate = moment().from(place.addDate, true)
+
+    const handleDeleteClick = () => {
+        setDeleteDialogVisible(true)
+    }
+
     return (
         <div className={styles.container}>
             <Image
@@ -31,10 +40,16 @@ const PlaceShowCard = ({ place }: { place: Place }) => {
                     {place.entry ? `${place.entry}$/entry` : 'Free entry'}
                 </div>
                 <div className={styles.buttons}>
-                    <Button color='secondary' variant='outlined' emotion='margin-right: 10px;'>
+                    <Button
+                        color='secondary'
+                        variant='outlined'
+                        emotion='margin-right: 10px;'
+                        nextLink
+                        href={`/places/${place._id}/edit`}
+                    >
                         Edit
                     </Button>
-                    <Button color='primary' variant='outlined'>
+                    <Button color='primary' variant='outlined' onClick={handleDeleteClick}>
                         <MdOutlineDelete fontSize='18px' style={{ marginTop: '-4px' }} />
                         Delete
                     </Button>

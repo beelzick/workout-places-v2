@@ -14,9 +14,10 @@ interface Props {
     bottomBreak?: boolean
     register: UseFormRegister<InputProps>
     step?: string
+    defaultValue?: string | number
 }
 
-const Input = ({ type, name, children, placeholder, bottomBreak, register, step }: Props) => {
+const Input = ({ type, name, children, placeholder, bottomBreak, register, step, defaultValue }: Props) => {
     return (
         <div style={{ marginBottom: bottomBreak ? '16px' : 'unset' }}>
             <label htmlFor={name}>
@@ -29,6 +30,7 @@ const Input = ({ type, name, children, placeholder, bottomBreak, register, step 
                 className={styles.input}
                 {...register(name)}
                 step={step}
+                defaultValue={defaultValue}
             />
         </div>
     )

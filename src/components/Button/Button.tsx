@@ -11,11 +11,12 @@ interface Props {
     emotion?: string
     href?: string
     nextLink?: boolean
-    onClick?: MouseEventHandler<HTMLButtonElement>
+    onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
     type?: 'button' | 'reset' | 'submit'
+    disabled?: boolean
 }
 
-const Button = ({ children, variant, color, emotion, href, nextLink, onClick, type }: Props) => {
+const Button = ({ children, variant, color, emotion, href, nextLink, onClick, type, disabled }: Props) => {
     const btnColor = returnColor(color)
     const styles = css`
     padding: 6px 16px;
@@ -40,25 +41,31 @@ const Button = ({ children, variant, color, emotion, href, nextLink, onClick, ty
         border: 2px solid ${btnColor};
     `)}
     ${variant === 'outlined' && (`border: 2px solid ${btnColor};`)}
+    &:disabled {
+        background-color: rgba(0, 0, 0, 0.125);
+        border-color: rgba(0, 0, 0, 0.125);
+        color: rgba(0, 0, 0, 0.4);
+        cursor: not-allowed;
+    }
     ${emotion};
     `
     if (href && nextLink) {
         return (
             <Link href={href}>
-                <a css={styles}>
+                <a css={styles} onClick={onClick}>
                     {children}
                 </a>
             </Link>
         )
     } else if (href) {
         return (
-            <a css={styles}>
+            <a css={styles} onClick={onClick}>
                 {children}
             </a>
         )
     } else {
         return (
-            <button onClick={onClick} css={styles} type={type}>
+            <button disabled={disabled} onClick={onClick} css={styles} type={type}>
                 {children}
             </button>
         )

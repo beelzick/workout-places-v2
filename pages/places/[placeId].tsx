@@ -2,8 +2,14 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import clientPromise from '../../lib/mongodb'
 import { ObjectId } from 'mongodb'
 import ShowPage from '../../src/components/Places/ShowPage/ShowPage'
+import { useContext, useEffect } from 'react'
+import { CurrentPlaceContext } from '../_app'
 
 const Place = ({ place }: { place: Place }) => {
+    const { setCurrentPlace } = useContext(CurrentPlaceContext)
+    useEffect(() => {
+        setCurrentPlace(place)
+    }, [])
     return (
         <ShowPage place={place} />
     )

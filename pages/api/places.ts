@@ -14,13 +14,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             query: body.location,
             limit: 1
         }).send()
-        const place = await placesCollection.insertOne({
+        await placesCollection.insertOne({
             ...body,
             entry: parseInt(body.entry),
             addDate: new Date(body.addDate),
             geometry: geoData.body.features[0].geometry,
             reviews: []
         })
+        res.status(200).json({ success: true })
     }
 }
 

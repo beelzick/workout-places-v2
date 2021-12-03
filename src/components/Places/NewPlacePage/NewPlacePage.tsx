@@ -9,6 +9,9 @@ import uploadFile from '../../../helpers/uploadFile'
 import axios from 'axios'
 import { useUser } from '@auth0/nextjs-auth0';
 import { userId } from '../../../helpers/general'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+
 interface Inputs {
 
 }
@@ -16,7 +19,11 @@ interface Inputs {
 const NewPlacePage = () => {
     const { user, error, isLoading } = useUser()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>()
+    const [btnDisabled, setBtnDisabled] = useState(false)
+    const router = useRouter()
+
     const onSubmit: SubmitHandler<Inputs> = async (data: any) => {
+        setBtnDisabled(true)
         const { secure_url } = await uploadFile(data.images[0])
         delete data.images
         const placeData = {
@@ -26,7 +33,10 @@ const NewPlacePage = () => {
             addDate: new Date()
         }
         const response = await axios.post('/api/places', placeData)
-        console.log(response)
+        if (response.data.success) {
+            setBtnDisabled(false)
+            router.push('/places')
+        }
     }
 
     return (
@@ -46,7 +56,7 @@ const NewPlacePage = () => {
                             Entry Price
                         </Input>
                         <TextArea name='description' labelText='Description' register={register} />
-                        <Button color='primary' variant='contained' emotion='margin-top: 15px;' type='submit'>
+                        <Button color='primary' variant='contained' emotion='margin-top: 15px;' type='submit' disabled={btnDisabled}>
                             add new place
                         </Button>
                     </form>

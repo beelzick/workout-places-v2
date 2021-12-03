@@ -1,0 +1,69 @@
+@import '../../../../styles/scss/_mixins.scss';
+@import '../../../../styles/scss/_vars.scss';
+
+.container {
+    position: fixed;
+    @include flexCenter();
+    z-index: 1300;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+}
+
+.content {
+    width: 95%;
+    height: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+}
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.spn1 {
+    font-size: 1.6rem;
+}
+
+.spn2 {
+    font-size: 1.1rem;
+}
+
+@media(min-width: $sm) {
+    .content {
+        width: 60%;
+    }
+}
+
+@media(min-width: $md) {
+    .content {
+        width: 40%;
+    }
+}
+
+@media(min-width: $lg) {
+    .content {
+        width: 30%
+    }
+}
+
+@media(min-width: $xl) {
+    .content {
+        width: 25%;
+    }
+}
