@@ -21,3 +21,11 @@
   -webkit-box-shadow: 0px 0px 0px 3px rgba(218, 44, 56, 0.65);
           box-shadow: 0px 0px 0px 3px rgba(218, 44, 56, 0.65);
 }
+
+.error {
+  color: #DA2C38;
+  line-height: 1.5;
+  height: 19px;
+  display: block;
+  margin-top: 2px;
+}

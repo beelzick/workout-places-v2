@@ -47,3 +47,11 @@
 @mixin h1() {
     font-size: 2.5rem;
 }
+
+@mixin error() {
+    color: #DA2C38;
+    line-height: 1.5;
+    height: 19px;
+    display: block;
+    margin-top: 2px;
+}

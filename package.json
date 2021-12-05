@@ -10,20 +10,22 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.6.1",
     "@emotion/react": "^11.7.0",
-    "@emotion/styled": "^11.6.0",
+    "@hookform/resolvers": "^2.8.4",
     "@mapbox/mapbox-sdk": "^0.13.2",
-    "@mui/material": "^5.2.2",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "mapbox-gl": "^2.6.1",
     "moment": "^2.29.1",
     "next": "12.0.4",
     "nextjs-progressbar": "^0.0.13",
+    "rc-rate": "^2.9.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.20.5",
     "react-icons": "^4.3.1",
-    "react-infinite-scroll-component": "^6.1.0"
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-toastify": "^8.1.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/mapbox__mapbox-sdk": "^0.13.2",

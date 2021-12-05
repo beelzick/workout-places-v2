@@ -14,3 +14,17 @@ h1, h2, h3, h4, h5, h6 {
 .map-show-page {
     height: 300px;
 }
+
+.rc-rate {
+    font-size: 40px;
+}
+
+.rc-rate-star-half .rc-rate-star-first,
+.rc-rate-star-full .rc-rate-star-second {
+  color: #DA2C38;
+}
+
+.rc-rate-star-half:hover .rc-rate-star-first,
+.rc-rate-star-full:hover .rc-rate-star-second {
+  color: #ec9399;
+}

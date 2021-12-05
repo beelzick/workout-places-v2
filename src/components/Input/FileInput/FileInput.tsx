@@ -8,9 +8,10 @@ interface InputProps {
 interface Props {
     name: string
     register: UseFormRegister<InputProps>
+    error?: string
 }
 
-const FileInput = ({ name, register }: Props) => {
+const FileInput = ({ name, register, error }: Props) => {
     return (
         <div className={styles.container}>
             <label htmlFor={name}>Add Images</label>
@@ -21,6 +22,7 @@ const FileInput = ({ name, register }: Props) => {
                 accept='image/png, image/jpeg, image/jpg'
                 {...register(name)}
             />
+            <span>{error}</span>
         </div>
     )
 }

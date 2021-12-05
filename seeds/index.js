@@ -1,7 +1,7 @@
 import { config } from 'dotenv'
 config()
 import { MongoClient } from 'mongodb'
-import { descriptors, places } from './seedInitiators.mjs'
+import { descriptors, places, gyms, authors } from './seedInitiators.mjs'
 import cities from './cities_pl.json'
 
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -42,8 +42,8 @@ const generateData = () => {
                 type: 'Point',
                 coordinates: [parseFloat(location.lng), parseFloat(location.lat)]
             },
-            author: '102014881727208423653',
-            imageUrl: 'https://res.cloudinary.com/dfvpybkta/image/upload/c_scale,h_1391,q_85/v1634593106/WorkoutPlaces/gym-7.jpg',
+            author: randArrEl(authors),
+            imgUrl: randArrEl(gyms),
             reviews: [],
         })
     }

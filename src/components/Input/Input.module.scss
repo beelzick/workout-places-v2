@@ -4,3 +4,6 @@
     @include input();
     margin-top: 10px;
 }
+.error {
+    @include error();
+}

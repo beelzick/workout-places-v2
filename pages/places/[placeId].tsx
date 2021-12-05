@@ -38,8 +38,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const client = await clientPromise
     const placeId = context!.params!.placeId as string
     const placeData = await client.db('workout-places').collection('places').findOne({ _id: new ObjectId(placeId) })
+    const authorData = await client.db('workout-places').collection('users').findOne({ _id: placeData!.author })
     const place = JSON.parse(JSON.stringify(placeData))
-
+    place.authorName = JSON.parse(JSON.stringify(authorData!.nickname))
     return {
         props: {
             place

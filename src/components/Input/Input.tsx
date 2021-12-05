@@ -1,5 +1,5 @@
 import styles from './Input.module.css'
-import { ChangeEventHandler, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 
 interface InputProps {
@@ -15,11 +15,22 @@ interface Props {
     register: UseFormRegister<InputProps>
     step?: string
     defaultValue?: string | number
+    error?: string
 }
 
-const Input = ({ type, name, children, placeholder, bottomBreak, register, step, defaultValue }: Props) => {
+const Input = ({
+    type,
+    name,
+    children,
+    placeholder,
+    bottomBreak,
+    register,
+    step,
+    defaultValue,
+    error
+}: Props) => {
     return (
-        <div style={{ marginBottom: bottomBreak ? '16px' : 'unset' }}>
+        <div style={{ marginBottom: bottomBreak ? '12px' : 'unset' }}>
             <label htmlFor={name}>
                 {children}
             </label>
@@ -32,6 +43,9 @@ const Input = ({ type, name, children, placeholder, bottomBreak, register, step,
                 step={step}
                 defaultValue={defaultValue}
             />
+            <span className={styles.error}>
+                {error}
+            </span>
         </div>
     )
 }

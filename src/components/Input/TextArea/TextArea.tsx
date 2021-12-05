@@ -13,9 +13,10 @@ interface Props {
     labelText: string
     register: UseFormRegister<InputProps>
     defaultValue?: string
+    error?: string
 }
 
-const TextArea = ({ name, emotion, labelText, register, defaultValue }: Props) => {
+const TextArea = ({ name, emotion, labelText, register, defaultValue, error }: Props) => {
     const containerStyles = css`${emotion}`
     return (
         <div css={containerStyles}>
@@ -29,6 +30,7 @@ const TextArea = ({ name, emotion, labelText, register, defaultValue }: Props) =
                 className={styles.textArea}
                 defaultValue={defaultValue}
             />
+            <span className={styles.error}>{error}</span>
         </div>
     )
 }

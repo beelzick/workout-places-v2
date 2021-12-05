@@ -14,6 +14,7 @@ interface Place {
     reviews: []
     author: string
     imgUrl: string
+    authorName?: string
 }
 
 interface Places {

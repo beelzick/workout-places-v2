@@ -5,7 +5,7 @@ import { DeleteDialogVisibleContext } from '../ShowPage'
 import axios from 'axios'
 import { CurrentPlaceContext } from '../../../../../pages/_app'
 import { useRouter } from 'next/router'
-
+import { toast } from 'react-toastify'
 interface Props {
     visible: boolean
 }
@@ -19,11 +19,16 @@ const DeleteDialog = ({ visible }: Props) => {
         setDeleteDialogVisible(false)
     }
 
-    const handleDeleteClick = async () => {
-        const { data } = await axios.delete(`/api/places/${_id}`)
-        if (data.success) {
-            router.push('/places')
-        }
+    const handleDeleteClick = () => {
+        toast.promise(
+            axios.delete(`/api/places/${_id}`),
+            {
+                pending: 'Pending',
+                success: 'Place successfully deleted 👌',
+                error: 'Couldn\'t delete this place 🤯'
+            }
+        )
+        router.push('/places')
     }
 
     return (
