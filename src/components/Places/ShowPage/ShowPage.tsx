@@ -32,6 +32,9 @@ const ShowPage = ({ place }: { place: Place }) => {
                     </div>
                 </Container>
                 <DeleteDialog visible={deleteDialogVisible} />
+                <div className={styles.reviews}>
+                    dsads dasas asdasd
+                </div>
             </div>
         </DeleteDialogVisibleContext.Provider>
     )
