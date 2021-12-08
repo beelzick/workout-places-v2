@@ -9,7 +9,7 @@ const Place = ({ place }: { place: Place }) => {
     const { setCurrentPlace } = useContext(CurrentPlaceContext)
     useEffect(() => {
         setCurrentPlace(place)
-    }, [])
+    }, [setCurrentPlace, place])
     return (
         <ShowPage place={place} />
     )

@@ -9,7 +9,8 @@ import { useUser } from '@auth0/nextjs-auth0'
 import { userId } from '../../../../helpers/general'
 
 const PlaceShowCard = (
-    { place: { name,
+    { place: {
+        name,
         description,
         location,
         addDate,
@@ -22,7 +23,7 @@ const PlaceShowCard = (
 ) => {
     const { setDeleteDialogVisible } = useContext(DeleteDialogVisibleContext)
     const momentDate = moment().from(addDate, true)
-    const { user, isLoading, error } = useUser()
+    const { user } = useUser()
 
     const handleDeleteClick = () => {
         setDeleteDialogVisible(true)
@@ -35,6 +36,7 @@ const PlaceShowCard = (
                 objectFit='cover'
                 height={500}
                 width={728}
+                alt={`Image of ${name}`}
             />
             <div className={styles.content}>
                 <div>

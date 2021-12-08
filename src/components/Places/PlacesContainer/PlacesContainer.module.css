@@ -5,6 +5,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: calc(100vh -54px);
+  padding-top: 84px;
 }
 
 .container {

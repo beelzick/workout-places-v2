@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import mapboxgl, { Map as MapType } from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import renderMap from '../../helpers/mapbox'
+import styles from './Map.module.css'
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -19,8 +20,8 @@ const Map = () => {
         renderMap(map)
     })
     return (
-        <div>
-            <div ref={mapContainer} className='map-container' />
+        <div className={styles.container}>
+            <div ref={mapContainer} className={styles.map} />
         </div>
     )
 }

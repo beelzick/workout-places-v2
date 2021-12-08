@@ -8,7 +8,15 @@ const renderMap: RenderMap = async (map) => {
         map.current.addSource('places', {
             type: 'geojson',
             data: {
-                features: data.places
+                features: data.places.map((place: Place) => ({
+                    type: 'Feature',
+                    properties: {
+                        _id: place._id,
+                        name: place.name
+                    },
+                    geometry: place.geometry
+
+                }))
             },
             cluster: true,
             clusterMaxZoom: 14,
@@ -77,7 +85,6 @@ const renderMap: RenderMap = async (map) => {
                 clusterId,
                 (err: any, zoom: any) => {
                     if (err) return;
-
                     map.current.easeTo({
                         center: features[0].geometry.coordinates,
                         zoom: zoom
@@ -87,18 +94,16 @@ const renderMap: RenderMap = async (map) => {
         });
         map.current.on('click', 'unclustered-point', (e: any) => {
             const coordinates = e.features[0].geometry.coordinates.slice();
-            const mag = e.features[0].properties.mag;
-            const tsunami =
-                e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
+            const { name, _id }: Place = e.features[0].properties
 
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
 
-            new mapboxgl.Popup()
+            new mapboxgl.Popup({ className: 'popup-link' })
                 .setLngLat(coordinates)
                 .setHTML(
-                    `magnitude: ${mag}<br>Was there a tsunami?: ${tsunami}`
+                    `<a href='/places/${_id}'>${name}</a>`
                 )
                 .addTo(map.current);
         });

@@ -1,6 +1,6 @@
 import { config } from 'dotenv'
 config()
-import { MongoClient } from 'mongodb'
+import { MongoClient, ObjectId } from 'mongodb'
 import { descriptors, places, gyms, authors } from './seedInitiators.mjs'
 import cities from './cities_pl.json'
 
@@ -15,6 +15,21 @@ const generateEntry = () => {
     } else {
         return 0
     }
+}
+
+const generateReviews = () => {
+    const reviews = []
+    for (let i = 0; i < getRndInteger(3, 12); i++) {
+        const { author, id } = randArrEl(authors)
+        reviews.push({
+            _id: new ObjectId(),
+            description: lorem.slice(0, getRndInteger(15, 255)),
+            rating: Math.floor((Math.random() * 6)),
+            authorId: id,
+            author
+        })
+    }
+    return reviews
 }
 
 const generateDate = () => {
@@ -42,9 +57,9 @@ const generateData = () => {
                 type: 'Point',
                 coordinates: [parseFloat(location.lng), parseFloat(location.lat)]
             },
-            author: randArrEl(authors),
+            author: randArrEl(authors).id,
             imgUrl: randArrEl(gyms),
-            reviews: [],
+            reviews: generateReviews(),
         })
     }
     return placesArray

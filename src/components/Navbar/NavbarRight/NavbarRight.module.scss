@@ -1,5 +1,16 @@
 @import '../../../styles/scss/_mixins.scss';
+@import '../../../styles/scss/_vars.scss';
 
-.container {
-    @include flexAlignCenter();
+.containerDeskopt {
+    display: none;
+}
+
+
+@media(min-width: $md) {
+    .containerDeskopt {
+        @include flexAlignCenter();
+    }
+    .mobile {
+        display: none;
+    }
 }

@@ -1,5 +1,5 @@
 import Container from '../../Container/Container'
-import styles from './EditPlacePage.module.css'
+import styles from '../Form.module.css'
 import { toast } from 'react-toastify'
 import { useUser } from '@auth0/nextjs-auth0';
 import { userId } from '../../../helpers/general'
@@ -31,7 +31,7 @@ const EditPlacePage = () => {
             router.push(`/places/${router.query.placeId}`)
             setBtnDisabled(true)
         }
-    }, [_id, router])
+    }, [_id, router, author, user])
 
     return (
         <BtnDisabledContext.Provider value={value}>

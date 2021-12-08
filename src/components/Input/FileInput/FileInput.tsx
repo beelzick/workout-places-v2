@@ -1,13 +1,9 @@
 import styles from './FileInput.module.css'
-import { UseFormRegister } from 'react-hook-form'
-
-interface InputProps {
-    [key: string]: string
-}
+import { UseFormRegister, Path } from 'react-hook-form'
 
 interface Props {
-    name: string
-    register: UseFormRegister<InputProps>
+    name: Path<Inputs>
+    register: UseFormRegister<Inputs>
     error?: string
 }
 

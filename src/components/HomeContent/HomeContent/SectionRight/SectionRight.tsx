@@ -10,6 +10,7 @@ const SectionRight = () => {
                 objectFit='cover'
                 layout='fill'
                 quality={100}
+                alt='Home Page Photo, Gym black and white'
             />
             <div className={styles.rightRedLayer} />
             <div className={styles.content}>

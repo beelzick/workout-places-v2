@@ -1,16 +1,34 @@
 @import '../../../styles/scss/_vars.scss';
+@import '../../../styles/scss/_mixins.scss';
+
 .pageContainer {
     display: flex;
     justify-content: center;
-
+    @include pageContainer();
 }
-.reviews {
-    width: 100%;
-    height: 100px;
+
+.reviewsContainer {
+    display: flex;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
 }
 
 .contentPart {
-    width: 50%;
+    width: 100%;
     box-sizing: border-box;
     padding: 0px 12px;
+}
+
+@media(min-width: $md) {
+    .content {
+        flex-direction: row;
+    }
+    .contentPart {
+        width: 50%;
+    }
 }

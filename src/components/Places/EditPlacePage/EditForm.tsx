@@ -11,13 +11,6 @@ import { toast } from 'react-toastify'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import { editPlaceSchema } from '../../../helpers/yup'
 
-interface Inputs {
-    name: string
-    location: string
-    entry: number
-    description: string
-}
-
 const EditForm = () => {
     const { currentPlace: { _id, location, name, entry, description } } = useContext(CurrentPlaceContext)
     const { btnDisabled, setBtnDisabled } = useContext(BtnDisabledContext)
@@ -57,7 +50,7 @@ const EditForm = () => {
             <Input
                 name='location'
                 register={register}
-                placeholder='Place Name'
+                placeholder='Place Location'
                 bottomBreak
                 defaultValue={location}
                 error={errors.location?.message}

@@ -1,5 +1,5 @@
 import Container from '../../Container/Container'
-import styles from './NewPlacePage.module.css'
+import styles from '../Form.module.css'
 import Input from '../../Input/Input'
 import FileInput from '../../Input/FileInput/FileInput'
 import TextArea from '../../Input/TextArea/TextArea'
@@ -14,14 +14,6 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import { newPlaceSchema } from '../../../helpers/yup'
-
-interface Inputs {
-    name: string
-    location: string
-    entry: number
-    description: string
-    images?: string
-}
 
 const NewPlacePage = () => {
     const { user } = useUser()

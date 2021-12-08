@@ -4,10 +4,10 @@ const SectionLeft = () => {
     return (
         <section className={styles.container}>
             <div>
-                <h1 className={styles.h1}>
+                <h1 >
                     find your <span>best</span> <br /> training  <br /> <span>spot</span>
                 </h1>
-                <h2 className={styles.h2}>
+                <h2 >
                     no more excuses
                 </h2>
             </div>

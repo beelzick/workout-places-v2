@@ -11,9 +11,5 @@
   padding: 5px 30px;
   z-index: 5;
   width: 100%;
-}
-
-.home {
-  position: fixed;
-  color: #fff;
+  position: absolute;
 }

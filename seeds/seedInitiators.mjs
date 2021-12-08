@@ -29,10 +29,22 @@ export const descriptors = [
 ]
 
 export const authors = [
-    '102014881727208423653',
-    '61ab471edcaacf006a01be28',
-    '61ab477d65d7430069d9cf33',
-    '61ab47d5a091fb00691ef55b'
+    {
+        id: '102014881727208423653',
+        author: 'beelzick'
+    },
+    {
+        id: '61ab471edcaacf006a01be28',
+        author: 'bob'
+    },
+    {
+        id: '61ab477d65d7430069d9cf33',
+        author: 'angelina'
+    },
+    {
+        id: '61ab47d5a091fb00691ef55b',
+        author: 'tom653'
+    }
 ]
 
 export const places = [

@@ -66,7 +66,7 @@ export const editPlaceSchema = Yup.object().shape({
 export const reviewSchema = Yup.object().shape({
     description: Yup
         .string()
-        .min(20, 'Place description must have a minimum of 20 letters')
-        .max(455, 'Place description must have a maximum of 455 letters')
+        .min(15, 'Place description must have a minimum of 15 letters')
+        .max(255, 'Place description must have a maximum of 255 letters')
         .required(required)
 })

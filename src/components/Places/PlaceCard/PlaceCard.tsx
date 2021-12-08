@@ -18,6 +18,7 @@ const PlaceCard = ({ name, description, location, _id, imgUrl }: Props) => {
                     src={imgUrl}
                     layout='fill'
                     objectFit='cover'
+                    alt={`Image of ${name}`}
                 />
             </div>
             <div className={styles.detailsContainer}>

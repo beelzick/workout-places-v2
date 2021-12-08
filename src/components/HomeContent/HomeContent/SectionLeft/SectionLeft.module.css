@@ -22,28 +22,57 @@
           flex-direction: column;
 }
 
-.container .h1 {
+.container h1 {
   font-family: 'Oswald', sans-serif;
   color: #fff;
-  font-size: 140px;
+  font-size: 80px;
+  text-align: center;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.container .h1 span {
+.container h1 span {
   color: #DA2C38;
 }
 
-.container .h2 {
+.container h2 {
   margin-top: 30px;
   color: #fff;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 200;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .container h1 {
+    font-size: 110px;
+  }
+}
+
+@media (min-width: 800px) {
+  .container h1 {
+    font-size: 120px;
+  }
 }
 
 @media (min-width: 900px) {
   .container {
     width: 70%;
+  }
+  .container h1 {
+    text-align: unset;
+  }
+  .container h2 {
+    text-align: unset;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container h1 {
+    font-size: 140px;
+  }
+  .container h2 {
+    font-size: 40px;
   }
 }

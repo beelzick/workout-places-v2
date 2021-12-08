@@ -6,6 +6,7 @@ import axios from 'axios'
 import { CurrentPlaceContext } from '../../../../../pages/_app'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
+
 interface Props {
     visible: boolean
 }
@@ -38,7 +39,7 @@ const DeleteDialog = ({ visible }: Props) => {
                     <div className={styles.content}>
                         <div className={styles.text}>
                             <span className={styles.spn1}>Delete the place?</span>
-                            <span className={styles.spn2}>It can't be undone</span>
+                            <span className={styles.spn2}>It can&apos;t be undone</span>
                         </div>
                         <div className={styles.buttons}>
                             <Button

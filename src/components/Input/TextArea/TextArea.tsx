@@ -1,22 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import styles from './TextArea.module.css'
-import { UseFormRegister } from 'react-hook-form'
-
-interface InputProps {
-    [key: string]: string
-}
+import { UseFormRegister, Path } from 'react-hook-form'
 
 interface Props {
-    name: string
+    name: Path<Inputs>
     emotion?: string
     labelText: string
-    register: UseFormRegister<InputProps>
+    register: UseFormRegister<Inputs>
     defaultValue?: string
     error?: string
+    disabled?: boolean
 }
 
-const TextArea = ({ name, emotion, labelText, register, defaultValue, error }: Props) => {
+const TextArea = ({ name, emotion, labelText, register, defaultValue, error, disabled }: Props) => {
     const containerStyles = css`${emotion}`
     return (
         <div css={containerStyles}>
@@ -24,6 +21,7 @@ const TextArea = ({ name, emotion, labelText, register, defaultValue, error }: P
                 {labelText}
             </label>
             <textarea
+                disabled={disabled}
                 rows={5}
                 id={name}
                 {...register(name)}

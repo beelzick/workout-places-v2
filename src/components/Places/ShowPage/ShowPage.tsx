@@ -5,6 +5,7 @@ import LeaveReview from './LeaveReview/LeaveReview'
 import Container from '../../Container/Container'
 import DeleteDialog from './DeleteDialog/DeleteDialog'
 import { createContext, Dispatch, SetStateAction, useState } from 'react'
+import Reviews from './Reviews/Reviews'
 
 interface DeleteDialogType {
     deleteDialogVisible: boolean,
@@ -19,23 +20,24 @@ export const DeleteDialogVisibleContext = createContext<DeleteDialogType>({
 const ShowPage = ({ place }: { place: Place }) => {
     const [deleteDialogVisible, setDeleteDialogVisible] = useState(false)
     const value = { deleteDialogVisible, setDeleteDialogVisible }
+
     return (
         <DeleteDialogVisibleContext.Provider value={value}>
-            <div className={styles.pageContainer}>
-                <Container>
-                    <div className={styles.contentPart}>
-                        <PlaceShowCard place={place} />
+            <section className={styles.pageContainer}>
+                <Container column>
+                    <div className={styles.content}>
+                        <div className={styles.contentPart}>
+                            <PlaceShowCard place={place} />
+                        </div>
+                        <div className={styles.contentPart}>
+                            <ShowPageMap place={place} />
+                            <LeaveReview />
+                        </div>
                     </div>
-                    <div className={styles.contentPart}>
-                        <ShowPageMap place={place} />
-                        <LeaveReview />
-                    </div>
+                    <Reviews />
                 </Container>
                 <DeleteDialog visible={deleteDialogVisible} />
-                <div className={styles.reviews}>
-                    dsads dasas asdasd
-                </div>
-            </div>
+            </section>
         </DeleteDialogVisibleContext.Provider>
     )
 }

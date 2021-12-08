@@ -1,4 +1,6 @@
 export const userId = (sub: string) => sub.split('|').pop()
+export const userNickname = (nickname: string) => nickname.split('.')[0]
+
 export const initialCurrentState: Place = {
     _id: '',
     imgUrl: '',

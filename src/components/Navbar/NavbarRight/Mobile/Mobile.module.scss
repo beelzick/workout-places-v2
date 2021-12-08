@@ -1,0 +1,22 @@
+@import '../../../../styles/scss/_mixins.scss';
+@import '../../../../styles/scss/_vars.scss';
+
+.mobile {
+    display: flex;
+  }
+  
+.hamburger {
+    border: none;
+    outline: none;
+    background-color: unset;
+    @include flexCenter();
+    cursor: pointer;
+}
+  
+
+
+@media(min-width: $md) {
+    .mobile {
+        display: none;
+    }
+}

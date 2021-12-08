@@ -1,0 +1,52 @@
+@import '../../../../../styles/scss/_vars.scss';
+@import '../../../../../styles/scss/_mixins.scss';
+
+@keyframes drawer {
+    from{
+        transform: translateX(300px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.background {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top:0;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 900;
+}
+
+.close {
+    @include flexCenter();
+    outline: none;
+    border: none;
+    background-color: unset;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.container {
+    width: 256px;
+    position: fixed;
+    z-index: 1200;
+    height: 100vh;
+    right: 0;
+    background-color: white;
+    top: 0;
+    box-shadow: -11px 0px 8px -13px rgba(66, 68, 90, 1);
+    box-sizing: border-box;
+    padding: 10px;
+    animation: drawer 350ms;
+}
+
+.buttons {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

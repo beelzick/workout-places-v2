@@ -1,8 +1,9 @@
 @import '../../../styles/scss/_vars.scss';
+@import '../../../styles/scss/_mixins.scss';
 
 .pageContainer {
-    display: flex;
-    justify-content: center;
+    @include flexJustifyCenter();
+    @include pageContainer();
 }
 
 .container {

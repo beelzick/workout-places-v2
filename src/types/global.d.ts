@@ -20,3 +20,19 @@ interface Place {
 interface Places {
     places: Place[]
 }
+
+interface Review {
+    authorId: string
+    description: string
+    rating: number
+    _id: string
+    author: string
+}
+
+interface Inputs {
+    name: string
+    location: string
+    entry: number
+    description: string
+    images?: string
+}

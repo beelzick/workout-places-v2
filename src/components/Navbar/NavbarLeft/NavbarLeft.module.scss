@@ -1,4 +1,5 @@
 @import '../../../styles/scss/_mixins.scss';
+@import '../../../styles/scss/_vars.scss';
 
 .container {
     @include flexAlignCenter();
@@ -6,5 +7,23 @@
 
 .buttons {
     margin-left: 50px;
-    display: flex;
+    display: none;
+}
+
+.logo {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Montserrat' ,sans-serif;
+    color: unset;
+    text-decoration: none;
+}
+
+.home {
+    color: white
+}
+
+@media(min-width: $md) {
+    .buttons {
+        display: flex
+    }
 }

@@ -9,7 +9,25 @@
 
 .buttons {
   margin-left: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
+}
+
+.logo {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Montserrat' ,sans-serif;
+  color: unset;
+  text-decoration: none;
+}
+
+.home {
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }

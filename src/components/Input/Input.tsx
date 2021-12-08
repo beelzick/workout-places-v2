@@ -1,18 +1,14 @@
 import styles from './Input.module.css'
 import { ReactNode } from 'react'
-import { UseFormRegister } from 'react-hook-form'
-
-interface InputProps {
-    [key: string]: string
-}
+import { UseFormRegister, Path } from 'react-hook-form'
 
 interface Props {
     type?: string
-    name: string
+    name: Path<Inputs>
     children: ReactNode
     placeholder?: string
     bottomBreak?: boolean
-    register: UseFormRegister<InputProps>
+    register: UseFormRegister<Inputs>
     step?: string
     defaultValue?: string | number
     error?: string

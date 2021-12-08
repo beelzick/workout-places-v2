@@ -19,6 +19,9 @@ interface Props {
 const Button = ({ children, variant, color, emotion, href, nextLink, onClick, type, disabled }: Props) => {
     const btnColor = returnColor(color)
     const styles = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 6px 16px;
     border: 2px solid transparent;
     background: unset;
