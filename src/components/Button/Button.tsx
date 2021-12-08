@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { EventHandler, MouseEventHandler, ReactNode } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import { css } from '@emotion/react'
 import { returnColor } from '../../helpers/buttonHelpers'
 import Link from 'next/link'
