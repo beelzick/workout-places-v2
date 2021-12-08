@@ -23,7 +23,7 @@ This application has the following features:
 <img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/typescript.svg" alt="TypeScript" width="26px" height="26px">
 <img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg" alt="JavaScript" width="26px" height="26px">
 <img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/css-3.svg" alt="CSS3" width="26px" height="26px">
-<img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/sasssvg" alt="Sass" width="26px" height="26px">
+<img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/sass.svg" alt="Sass" width="26px" height="26px">
 <img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/html-5.svg" alt="HTML5" width="26px" height="26px">
 <img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/mongodb-icon.svg" alt="MongoDB" width="26px" height="26px">
 <img align="left" src="https://github.com/get-icon/geticon/raw/master/icons/nodejs-icon.svg" alt="Node.js" width="26px" height="26px">
