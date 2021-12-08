@@ -5,14 +5,39 @@ import { useContext } from 'react'
 import { IsOpenContext } from '../Mobile'
 import Button from '../../../../Button/Button'
 import { useUser } from '@auth0/nextjs-auth0'
-import { handleSingInClick, handleSignOutClick } from '../../../../../helpers/auth'
+import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 
 const Drawer = () => {
     const { isOpen, setIsOpen } = useContext(IsOpenContext)
     const { user } = useUser()
     const scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
+    const router = useRouter()
 
     if (!isOpen) return null
+
+    const handleSingInClick = () => {
+        window.location.assign('/api/auth/login')
+        setIsOpen(false)
+    }
+
+    const handleBtnClick = () => {
+        setIsOpen(false)
+    }
+
+    const handleAddPlaceClick = () => {
+        setIsOpen(false)
+        if (!user) {
+            toast.error('You have to be logged in to add a new place')
+        } else {
+            router.push('/places/new')
+        }
+    }
+
+    const handleSignOutClick = () => {
+        window.location.assign('/api/auth/logout')
+        setIsOpen(false)
+    }
 
     const handleClick = () => {
         setIsOpen(false)
@@ -32,6 +57,7 @@ const Drawer = () => {
                             emotion='width: 200px;'
                             nextLink
                             href='/places'
+                            onClick={handleBtnClick}
                         >
                             All Places
                         </Button>
@@ -40,7 +66,7 @@ const Drawer = () => {
                             color='primary'
                             emotion='margin-top: 15px; width: 200px'
                             nextLink
-                            href='/places/new'
+                            onClick={handleAddPlaceClick}
                         >
                             Add Place
                         </Button>
