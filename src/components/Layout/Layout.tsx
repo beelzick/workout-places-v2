@@ -3,21 +3,24 @@ import NavbarContainer from '../Navbar/NavbarContainer/NavbarContainer'
 import NavbarContent from '../Navbar/NavbarContent/NavbarContent'
 import NavbarLeft from '../Navbar/NavbarLeft/NavbarLeft'
 import NavbarRight from '../Navbar/NavbarRight/NavbarRight'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ReactNode } from 'react'
+import { useRouter } from 'next/router'
 
 interface Props {
-    children: JSX.Element
+    children: ReactNode
 }
 
 const Layout = ({ children }: Props) => {
     const [isHome, setIsHome] = useState(true)
+    const router = useRouter()
+
     useEffect(() => {
-        if (children.type.name === 'Home') {
+        if (router.pathname === '/') {
             setIsHome(true)
         } else {
             setIsHome(false)
         }
-    }, [children.type.name])
+    }, [router])
 
     return (
         <div className={styles.container}>
